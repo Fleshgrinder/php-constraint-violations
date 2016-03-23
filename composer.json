@@ -1,6 +1,6 @@
 {
 	"name": "fleshgrinder/constraint-violations",
-	"description": "This library provides an implementation of the [Notification Pattern](http://martinfowler.com/eaaDev/Notification.html) with additional functionality to keep code DRY and to be more useful in the context of [Domain-Driven Design](http://www.domaindrivendesign.org/) (DDD) and its value objects.",
+	"description": "This library provides an implementation of the Notification Pattern with additional functionality to keep code DRY and to be more useful in the context of Domain-Driven Design (DDD) and its value objects.",
 	"keywords": [
 		"constraints",
 		"ddd",
