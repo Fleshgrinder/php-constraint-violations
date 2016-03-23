@@ -36,15 +36,21 @@ if (some_other_validation($input) === false) {
 	$warnings->addViolation('some other message');
 }
 
-// More validation ...
+// More validations ...
 
 if ($warnings->hasViolations) {
-	echo 'WARNINGS' , PHP_EOL , $warnings , PHP_EOL;
+	echo "WARNINGS\n";
+	foreach ($warnings->getMessages() as $message) {
+		echo "{$message}\n";
+	}
 }
 
 if ($errors->hasViolations) {
-	echo 'ERRORS' , PHP_EOL , $errors , PHP_EOL;
-	exit 1;
+	echo "ERRORS\n";
+	foreach ($warnings->getMessages() as $message) {
+		echo "{$message}\n";
+	}
+	exit(1);
 }
 
 // Continue ...
