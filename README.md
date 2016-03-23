@@ -3,7 +3,7 @@
 [![Test Coverage](https://img.shields.io/codeclimate/coverage/github/Fleshgrinder/php-constraint-violations.svg?style=flat-square)](https://codeclimate.com/github/Fleshgrinder/php-constraint-violations/coverage)
 [![Packagist](https://img.shields.io/packagist/v/fleshgrinder/constraint-violations.svg?style=flat-square)](https://packagist.org/packages/fleshgrinder/constraint-violations)
 [![Packagist License](https://img.shields.io/packagist/l/fleshgrinder/constraint-violations.svg?style=flat-square)](https://packagist.org/packages/fleshgrinder/constraint-violations)
-[![VersionEye](https://img.shields.io/versioneye/d/user/projects/5611592fa193340019000083.svg?style=flat-square)](https://www.versioneye.com/user/projects/5611592fa193340019000083)
+[![VersionEye](https://img.shields.io/versioneye/d/user/projects/56f3002c35630e0034fd9d6b.svg?style=flat-square)](https://www.versioneye.com/user/projects/56f3002c35630e0034fd9d6b)
 # PHP Constraint Violations
 This library provides an implementation of the [Notification Pattern](http://martinfowler.com/eaaDev/Notification.html)
  with additional functionality to keep code DRY and to be more useful in the context of
