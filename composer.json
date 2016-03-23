@@ -1,0 +1,60 @@
+{
+	"name": "fleshgrinder/constraint-violations",
+	"description": "This library provides an implementation of the [Notification Pattern](http://martinfowler.com/eaaDev/Notification.html) with additional functionality to keep code DRY and to be more useful in the context of [Domain-Driven Design](http://www.domaindrivendesign.org/) (DDD) and its value objects.",
+	"keywords": [
+		"constraints",
+		"ddd",
+		"domain-driven design",
+		"martin fowler",
+		"notification pattern",
+		"notification",
+		"notifications",
+		"validation",
+		"violation",
+		"violations"
+	],
+	"homepage": "https://github.com/fleshgrinder/php-constraint-violations",
+	"license": "MIT",
+	"authors": [
+		{
+			"name": "Richard Fussenegger",
+			"email": "fleshgrinder@users.noreply.github.com",
+			"homepage": "http://richard.fussenegger.info/"
+		}
+	],
+	"support": {
+		"email": "fleshgrinder@users.noreply.github.com",
+		"issues": "https://github.com/fleshgrinder/php-constraint-violations/issues",
+		"source": "https://github.com/Fleshgrinder/php-constraint-violations/releases",
+		"wiki": "https://github.com/Fleshgrinder/php-constraint-violations/wiki"
+	},
+	"require": {
+		"php": ">=7.0.1",
+		"fleshgrinder/assertion": "^1.1"
+	},
+	"require-dev": {
+		"codeclimate/php-test-reporter": "^0.3.0",
+		"phpunit/phpunit": "^5.2"
+	},
+	"autoload": {
+		"psr-4": {
+			"Fleshgrinder\\Constraints\\": "src/"
+		}
+	},
+	"autoload-dev": {
+		"psr-4": {
+			"Fleshgrinder\\Constraints\\": "tests/"
+		}
+	},
+	"minimum-stability": "stable",
+	"prefer-stable": true,
+	"config": {
+		"bin-dir": "bin",
+		"sort-packages": true,
+		"vendor-dir": "lib"
+	},
+	"scripts": {
+		"code-climate": "test-reporter --coverage-report=var/spool/coverage/report-clover.xml --no-interaction",
+		"test": "phpunit --verbose"
+	}
+}

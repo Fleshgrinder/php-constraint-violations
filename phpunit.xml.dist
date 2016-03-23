@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<phpunit bootstrap="lib/autoload.php"
+		 backupGlobals="false"
+		 backupStaticAttributes="false"
+		 colors="true"
+		 verbose="true"
+		 convertErrorsToExceptions="true"
+		 convertNoticesToExceptions="true"
+		 convertWarningsToExceptions="true"
+		 processIsolation="false"
+		 stopOnFailure="false">
+	<filter>
+		<whitelist>
+			<directory suffix=".php">src/</directory>
+		</whitelist>
+	</filter>
+	<logging>
+		<log type="tap" target="var/spool/coverage/report.tap"/>
+		<log type="junit" target="var/spool/coverage/report-junit.xml"/>
+		<log type="coverage-html" target="var/spool/coverage/report" charset="UTF-8" yui="true" highlight="true"/>
+		<log type="coverage-text" target="var/spool/coverage/report.txt"/>
+		<log type="coverage-clover" target="var/spool/coverage/report-clover.xml"/>
+	</logging>
+	<testsuites>
+		<testsuite name="unit-tests">
+			<directory>tests</directory>
+		</testsuite>
+	</testsuites>
+</phpunit>

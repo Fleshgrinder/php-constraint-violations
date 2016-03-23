@@ -1,0 +1,8 @@
+# https://travis-ci.org/
+language: php
+php:
+    - 7.0
+before_install: composer self-update
+install: composer update
+script: composer test
+after_success: composer code-climate
