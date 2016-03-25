@@ -4,6 +4,13 @@ This project adheres to [Semantic Versioning](http://semver.org/).
 
 ## [Unreleased]
 
+## [0.0.1] - 2016-03-25
+### Changed
+- `Iterator` to `IteratorAggregate` in `ViolationCollector` and internally to a `Generator`.
+- PHP constraint from 7.0.1 to 7.0.0 (typo).
+### Removed
+- Unused `fleshgrinder/assertion` dependency.
+
 ## [0.0.0] - 2016-03-23
 ### Added
 - Open Sourced
