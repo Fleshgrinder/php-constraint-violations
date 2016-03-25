@@ -10,7 +10,7 @@ namespace Fleshgrinder\Constraints;
 use Countable;
 use Exception;
 use Generator;
-use Iterator;
+use IteratorAggregate;
 use UnexpectedValueException;
 
 /**
@@ -21,7 +21,7 @@ use UnexpectedValueException;
  * Note that this class does not clone the violation instances that are added to it. The generic {@see Violation}
  * implementation is immutable and extending classes should be too.
  */
-class ViolationCollector implements Countable, Iterator {
+class ViolationCollector implements Countable, IteratorAggregate {
 
 	/** @var Violation[] */
 	private $violations = [];
@@ -58,14 +58,6 @@ class ViolationCollector implements Countable, Iterator {
 	}
 
 	/**
-	 * {@inheritDoc}
-	 * @return Violation
-	 */
-	public function current() {
-		return current($this->violations);
-	}
-
-	/**
 	 * Get all collected constraint violation causes, if any.
 	 *
 	 * @return Generator|Exception[]
@@ -73,6 +65,13 @@ class ViolationCollector implements Countable, Iterator {
 	public function getCauses(): Generator {
 		foreach ($this->violations as $violation) {
 			yield $violation->getCause();
+		}
+	}
+
+	/** @inheritDoc */
+	public function getIterator() {
+		foreach ($this->violations as $violation) {
+			yield $violation;
 		}
 	}
 
@@ -92,26 +91,6 @@ class ViolationCollector implements Countable, Iterator {
 	 */
 	public function hasViolations(): bool {
 		return !empty($this->violations);
-	}
-
-	/** @inheritDoc */
-	public function next() {
-		next($this->violations);
-	}
-
-	/** @inheritDoc */
-	public function key() {
-		return key($this->violations);
-	}
-
-	/** @inheritDoc */
-	public function valid() {
-		return current($this->violations) !== false;
-	}
-
-	/** @inheritDoc */
-	public function rewind() {
-		reset($this->violations);
 	}
 
 	//@formatter:off
