@@ -53,7 +53,7 @@
 		"vendor-dir": "lib"
 	},
 	"scripts": {
-		"code-climate": "test-reporter --coverage-report=var/spool/coverage/report-clover.xml --no-interaction",
+		"codeclimate": "test-reporter --coverage-report=var/spool/coverage/report-clover.xml --no-interaction",
 		"test": "phpunit --verbose"
 	}
 }
