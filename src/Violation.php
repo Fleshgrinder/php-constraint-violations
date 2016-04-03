@@ -17,16 +17,16 @@ use Exception;
  */
 class Violation {
 
-	/** @var Exception */
+	/** @var Exception|null */
 	private $cause;
 
 	/** @var string */
 	private $message;
 
-	public function __construct(string $message, Exception $cause) {
+	public function __construct(string $message, Exception $cause = null) {
 		assert('$message !== ""', '`message` cannot be empty');
-		$this->cause = $cause;
 		$this->message = $message;
+		$this->cause = $cause;
 	}
 
 	/** @inheritDoc */
@@ -34,14 +34,23 @@ class Violation {
 		return $this->message;
 	}
 
-	/** Get this violation’s cause, if any. */
-	public function getCause(): Exception {
+	/**
+	 * Get this violation’s cause, if any.
+	 *
+	 * @return Exception|null
+	 */
+	public function getCause() {
 		return $this->cause;
 	}
 
 	/** Get this violation’s message. */
 	public function getMessage(): string {
 		return $this->message;
+	}
+
+	/** Check if it has a cause. */
+	public function hasCause(): bool {
+		return isset($this->cause);
 	}
 
 	//@formatter:off

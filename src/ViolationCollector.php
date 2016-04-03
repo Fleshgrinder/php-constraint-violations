@@ -44,11 +44,9 @@ class ViolationCollector implements Countable, IteratorAggregate {
 	 * @param $message
 	 *     that explains the violation in user language.
 	 * @param $cause
-	 *     that explains the violation in developer language. An {@see \UnexpectedValueException} with
-	 *     <var>$message</var> is created if `NULL` (default) is passed.
+	 *     that lead to the violation and explains it in developer language.
 	 */
 	public function addViolation(string $message, Exception $cause = null) {
-		$cause = $cause ?? new UnexpectedValueException($message);
 		$this->violations[] = new Violation($message, $cause);
 	}
 
@@ -64,7 +62,10 @@ class ViolationCollector implements Countable, IteratorAggregate {
 	 */
 	public function getCauses(): Generator {
 		foreach ($this->violations as $violation) {
-			yield $violation->getCause();
+			$cause = $violation->getCause();
+			if (isset($cause)) {
+				yield $cause;
+			}
 		}
 	}
 

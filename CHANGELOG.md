@@ -4,6 +4,15 @@ This project adheres to [Semantic Versioning](http://semver.org/).
 
 ## [Unreleased]
 
+## [0.1.0] - 2016-03-03
+### Added
+- `hasCause` method to `Violation`.
+### Changed
+- `Violation` constructor to accept `null` as cause; making the second argument effectively optional.
+### Removed
+- `UnexpectedValueException` creation in `ViolationCollector`; tried to avoid `null` usage but it makes no sense to do
+   so here since the automatically created exception contains no useful information.
+
 ## [0.0.1] - 2016-03-25
 ### Changed
 - `Iterator` to `IteratorAggregate` in `ViolationCollector` and internally to a `Generator`.
